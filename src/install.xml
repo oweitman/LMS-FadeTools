@@ -6,6 +6,7 @@
   <version>1.0.0</version>
   <description>PLUGIN_FADETOOLS_DESC</description>
   <creator>Custom LMS plugin</creator>
+  <homepage>https://github.com/oweitman/LMS-FadeTools</homepage>
   <defaultState>enabled</defaultState>
   <type>2</type>
   <targetApplication>

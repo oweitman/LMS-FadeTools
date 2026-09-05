@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extensions>
+  <details>
+    <title lang="EN">Fade Tools for Lyrion Music Server</title>
+  </details>
+  <!-- The release workflow adds the plugin after building its first package. -->
+  <plugins />
+</extensions>

@@ -1,0 +1,16 @@
+{
+  "name": "lms-fadetools",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node scripts/build-release.js",
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "adm-zip": "0.6.0",
+    "fast-xml-parser": "5.11.1"
+  }
+}

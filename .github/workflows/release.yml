@@ -1,0 +1,71 @@
+name: Release plugin
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-main
+  cancel-in-progress: false
+
+jobs:
+  release:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install build dependencies
+        run: npm ci
+
+      - name: Test packaging
+        run: npm test
+
+      - name: Build plugin and catalog
+        id: build
+        run: npm run build -- --advance
+
+      - name: Publish release before advertising it in the catalog
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.build.outputs.version }}
+          ARCHIVE: ${{ steps.build.outputs.archive }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          tag="v$VERSION"
+          if gh release view "$tag" >/dev/null 2>&1; then
+            # Recover an interrupted run without replacing an existing package.
+            mkdir -p dist/published
+            gh release download "$tag" --pattern "FadeTools-$VERSION.zip" --dir dist/published
+            cmp "$ARCHIVE" "dist/published/FadeTools-$VERSION.zip"
+          else
+            gh release create "$tag" "$ARCHIVE" --target "$(git rev-parse HEAD)" \
+              --title "Fade Tools $VERSION" --generate-notes --draft
+          fi
+          gh release edit "$tag" --draft=false --latest
+
+      - name: Update install metadata and public.xml
+        env:
+          VERSION: ${{ steps.build.outputs.version }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src/install.xml src/README.txt public.xml
+          git commit -m "Release Fade Tools $VERSION [skip ci]"
+          git pull --rebase origin main
+          git push origin HEAD:main
