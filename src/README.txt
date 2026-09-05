@@ -31,10 +31,10 @@ Convenience alias:
 Examples
 --------
 
-    00:11:22:33:44:55 fadeout pause 2.5
+    00:11:22:33:44:55 fadeout pause 2
     00:11:22:33:44:55 fadeout stop 3
     00:11:22:33:44:55 fadein play 2
-    00:11:22:33:44:55 fadein resume 1.5
+    00:11:22:33:44:55 fadein resume 1
 
 Durations must be > 0 and <= 60 seconds.
 

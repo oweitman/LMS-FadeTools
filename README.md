@@ -16,16 +16,15 @@ buttons to the player interface.
 
 ## Features
 
-| Command | Action |
-| --- | --- |
-| `fadeout pause <seconds>` | Fade out, then pause playback |
-| `fadeout stop <seconds>` | Fade out, then stop playback |
-| `fadein play <seconds>` | Start playback with a fade-in |
+| Command                   | Action                                |
+| ------------------------- | ------------------------------------- |
+| `fadeout pause <seconds>` | Fade out, then pause playback         |
+| `fadeout stop <seconds>`  | Fade out, then stop playback          |
+| `fadein play <seconds>`   | Start playback with a fade-in         |
 | `fadein resume <seconds>` | Resume paused playback with a fade-in |
-| `fadein pause <seconds>` | Alias for `fadein resume` |
+| `fadein pause <seconds>`  | Alias for `fadein resume`             |
 
-Durations must be **greater than 0 and no more than 60 seconds**. Use a decimal
-point for fractional values, for example `2.5`.
+Durations must be **greater than 0 and no more than 60 seconds**.
 
 Fade-out runs in parallel on all active members of a sync group. Once every fade
 has completed, the plugin pauses or stops playback and restores the previously
@@ -39,20 +38,13 @@ in the plugin metadata. Playback behavior depends on the player being used.
 1. Open **Settings > Plugins** in the LMS web interface.
 2. Under **Additional repositories** at the bottom of the page, add this URL and save:
 
-   ```text
-   https://raw.githubusercontent.com/oweitman/LMS-FadeTools/main/public.xml
-   ```
+    ```text
+    https://raw.githubusercontent.com/oweitman/LMS-FadeTools/main/public.xml
+    ```
 
 3. Reload the plugin page if necessary. Select **Fade Tools** from the available
    plugins and apply the installation.
 4. Restart LMS when prompted and check that **Fade Tools** is enabled.
-
-The repository offers the plugin after the first successful GitHub release.
-Future updates use the same repository URL; you only need to add it once.
-
-**Upgrading from FadeOut:** Disable or uninstall the old FadeOut plugin before
-enabling Fade Tools, then restart LMS. Both plugins register the same `fadeout`
-commands and should not run at the same time.
 
 ### Manual installation
 
@@ -82,8 +74,8 @@ the bundled plugin documentation is `/config/cache/Plugins/FadeTools/`.
 Send these commands to the LMS CLI, replacing `00:11:22:33:44:55` with your player ID:
 
 ```text
-00:11:22:33:44:55 fadeout pause 2.5
-00:11:22:33:44:55 fadein resume 1.5
+00:11:22:33:44:55 fadeout pause 2
+00:11:22:33:44:55 fadein resume 1
 00:11:22:33:44:55 fadeout stop 3
 00:11:22:33:44:55 fadein play 2
 ```
@@ -96,14 +88,14 @@ server address, port, player ID, and authentication to match your installation.
 
 ```json
 {
-  "id": 1,
-  "method": "slim.request",
-  "params": ["00:11:22:33:44:55", ["fadeout", "pause", "2.5"]]
+    "id": 1,
+    "method": "slim.request",
+    "params": ["00:11:22:33:44:55", ["fadeout", "pause", "2"]]
 }
 ```
 
 To resume with a fade-in, replace the command array with
-`["fadein", "resume", "1.5"]`. This also works with automation tools that can
+`["fadein", "resume", "1"]`. This also works with automation tools that can
 send HTTP requests.
 
 ## Troubleshooting
@@ -112,8 +104,7 @@ send HTTP requests.
   the plugin page.
 - **Command not recognized:** Check that Fade Tools is enabled and restart LMS.
   Disable any old FadeOut installation.
-- **Duration rejected:** Use a number in the range `0 < seconds <= 60`, with a
-  decimal point for fractional values.
+- **Duration rejected:** Use a number in the range `0 < seconds <= 60`.
 - **Further diagnosis:** Use the `plugin.fadetools` category in LMS logging settings.
 
 Please report bugs and feature requests as
