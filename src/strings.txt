@@ -1,0 +1,7 @@
+PLUGIN_FADETOOLS_NAME
+	EN	Fade Tools
+	DE	Fade Tools
+
+PLUGIN_FADETOOLS_DESC
+	EN	Adds CLI commands for server-timed fade-out and fade-in actions.
+	DE	Fügt CLI-Befehle für serverseitig getaktete Fade-Out- und Fade-In-Aktionen hinzu.
