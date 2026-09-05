@@ -3,6 +3,15 @@
   <details>
     <title lang="EN">Fade Tools for Lyrion Music Server</title>
   </details>
-  <!-- The release workflow adds the plugin after building its first package. -->
-  <plugins />
+  <plugins>
+    <plugin name="FadeTools" version="1.0.0" minTarget="8.0" maxTarget="*">
+      <title lang="EN">Fade Tools</title>
+      <desc lang="EN">Fade playback in or out with server-timed CLI commands.</desc>
+      <desc lang="DE">Wiedergabe mit serverseitig gesteuerten CLI-Befehlen ein- und ausblenden.</desc>
+      <url>https://github.com/oweitman/LMS-FadeTools/releases/download/v1.0.0/FadeTools-1.0.0.zip</url>
+      <link>https://github.com/oweitman/LMS-FadeTools</link>
+      <sha>557827fbf3b13cf27f36b77fad00edb7108b83da</sha>
+      <creator>Custom LMS plugin</creator>
+    </plugin>
+  </plugins>
 </extensions>
