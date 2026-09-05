@@ -7,7 +7,7 @@
   <description>PLUGIN_FADETOOLS_DESC</description>
   <creator>Custom LMS plugin</creator>
   <homepage>https://github.com/oweitman/LMS-FadeTools</homepage>
-  <icon>plugins/FadeTools/html/icon.png</icon>
+  <icon>https://raw.githubusercontent.com/oweitman/LMS-FadeTools/refs/heads/main/src/HTML/EN/plugins/FadeTools/html/icon.png</icon>
   <defaultState>enabled</defaultState>
   <type>2</type>
   <targetApplication>
