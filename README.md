@@ -37,17 +37,17 @@ saved volume settings. Fade-in uses LMS's native fade-in support.
 Requires **Lyrion Music Server / Logitech Media Server 8.0 or later**, as declared
 in the plugin metadata. Playback behavior depends on the player being used.
 
-1.  Open **Settings > Plugins** in the LMS web interface.
-2.  Under **Additional repositories** at the bottom
-    of the page, add this URL and save:
+1. Open **Settings > Plugins** in the LMS web interface.
+2. Under **Additional repositories** at the bottom
+   of the page, add this URL and save:
 
-        ```text
-        https://raw.githubusercontent.com/oweitman/LMS-FadeTools/main/public.xml
-        ```
+    ```text
+    https://raw.githubusercontent.com/oweitman/LMS-FadeTools/main/public.xml
+    ```
 
-3.  Reload the plugin page if necessary. Select **Fade Tools** from the available
-    plugins and apply the installation.
-4.  Restart LMS when prompted and check that **Fade Tools** is enabled.
+3. Reload the plugin page if necessary. Select **Fade Tools** from the available
+   plugins and apply the installation.
+4. Restart LMS when prompted and check that **Fade Tools** is enabled.
 
 ### Manual installation
 
