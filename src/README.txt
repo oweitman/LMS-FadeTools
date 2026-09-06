@@ -1,7 +1,7 @@
 Fade Tools for Lyrion Music Server
 ===================================
 
-Version 1.0.2
+Version 1.0.3
 
 CLI commands
 ------------
