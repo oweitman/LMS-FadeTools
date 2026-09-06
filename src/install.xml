@@ -3,7 +3,7 @@
   <id>4F4F8769-8E8B-49C3-B71A-FADE70015001</id>
   <name>PLUGIN_FADETOOLS_NAME</name>
   <module>Plugins::FadeTools::Plugin</module>
-  <version>1.0.3</version>
+  <version>1.0.4</version>
   <description>PLUGIN_FADETOOLS_DESC</description>
   <creator>Custom LMS plugin</creator>
   <homepage>https://github.com/oweitman/LMS-FadeTools</homepage>
