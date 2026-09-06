@@ -1,11 +1,13 @@
-<p align="center">
-  <img src="src/HTML/EN/plugins/FadeTools/html/icon.png" alt="Fade Tools sound wave icon" width="160">
-</p>
-
 # Fade Tools for Lyrion Music Server
 
 [![Release plugin](https://github.com/oweitman/LMS-FadeTools/actions/workflows/release.yml/badge.svg)](https://github.com/oweitman/LMS-FadeTools/actions/workflows/release.yml)
 [![Latest release](https://img.shields.io/github/v/release/oweitman/LMS-FadeTools)](https://github.com/oweitman/LMS-FadeTools/releases/latest)
+
+<p align="center">
+  <img
+    src="src/HTML/EN/plugins/FadeTools/html/icon.png"
+    alt="Fade Tools sound wave icon" width="160">
+</p>
 
 **Fade your music out, pause, and ease back into playback.** Fade Tools adds
 server-timed volume transitions to Lyrion Music Server (LMS), ready for home
@@ -35,16 +37,17 @@ saved volume settings. Fade-in uses LMS's native fade-in support.
 Requires **Lyrion Music Server / Logitech Media Server 8.0 or later**, as declared
 in the plugin metadata. Playback behavior depends on the player being used.
 
-1. Open **Settings > Plugins** in the LMS web interface.
-2. Under **Additional repositories** at the bottom of the page, add this URL and save:
+1.  Open **Settings > Plugins** in the LMS web interface.
+2.  Under **Additional repositories** at the bottom
+    of the page, add this URL and save:
 
-    ```text
-    https://raw.githubusercontent.com/oweitman/LMS-FadeTools/main/public.xml
-    ```
+        ```text
+        https://raw.githubusercontent.com/oweitman/LMS-FadeTools/main/public.xml
+        ```
 
-3. Reload the plugin page if necessary. Select **Fade Tools** from the available
-   plugins and apply the installation.
-4. Restart LMS when prompted and check that **Fade Tools** is enabled.
+3.  Reload the plugin page if necessary. Select **Fade Tools** from the available
+    plugins and apply the installation.
+4.  Restart LMS when prompted and check that **Fade Tools** is enabled.
 
 ### Manual installation
 
@@ -71,7 +74,8 @@ the bundled plugin documentation is `/config/cache/Plugins/FadeTools/`.
 
 ### LMS CLI
 
-Send these commands to the LMS CLI, replacing `00:11:22:33:44:55` with your player ID:
+Send these commands to the LMS CLI,
+replacing `00:11:22:33:44:55` with your player ID:
 
 ```text
 00:11:22:33:44:55 fadeout pause 2
@@ -139,7 +143,8 @@ publicly accessible for users to install the plugin.
 If a run fails after publication but before the catalog is pushed, it can be
 started again. An existing release asset is compared with the rebuilt ZIP before
 the catalog is updated; it is not overwritten. If source changes or a build-tool
-change produce a different ZIP, set a higher version in `src/install.xml` and push again.
+change produce a different ZIP, set a higher version
+in `src/install.xml` and push again.
 
 ### Local build and tests
 
